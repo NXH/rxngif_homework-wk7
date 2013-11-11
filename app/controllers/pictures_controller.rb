@@ -11,6 +11,7 @@ class PicturesController < ApplicationController
     @p.caption = params[:caption]
     @p.source = params[:source]
     @p.save
+    redirect_to "http://localhost:3000/all_pictures"
   end
   def destroy
     @picture = Picture.find_by({:id => params[:id]})
@@ -24,5 +25,6 @@ class PicturesController < ApplicationController
     @p.caption = params[:caption]
     @p.source = params[:source]
     @p.save
+    redirect_to "http://localhost:3000/picture_details/#{@p.id}"
   end
 end
