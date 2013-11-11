@@ -1,8 +1,12 @@
 <h1>All Pictures</h1>
+<p><%= link_to("Add a new picture", "http://localhost:3000/new_picture_form") %></p>
 
 <% @pictures = Picture.all %>
 <% @pictures.each do |pic| %>
-  <ul> <%= pic.caption %> </ul>
+  <h3> <%= pic.caption %> </h3>
     <%= image_tag(pic.source, :width => 200) %>
+    <p></p>
+    <ul><%= link_to("Picture Details", "http://localhost:3000/picture_details/#{pic.id}") %></ul>
+    <p></p>
     <p></p>
 <% end %>
