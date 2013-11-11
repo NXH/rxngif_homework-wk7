@@ -3,6 +3,6 @@
 <% @pictures = Picture.all %>
 <% @pictures.each do |pic| %>
   <ul> <%= pic.caption %> </ul>
-    <img src="<%= pic.source %>" width = "200px">
+    <%= image_tag(pic.source, :width => 200) %>
     <p></p>
 <% end %>
