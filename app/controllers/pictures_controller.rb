@@ -16,6 +16,7 @@ class PicturesController < ApplicationController
   def destroy
     @picture = Picture.find_by({:id => params[:id]})
     @picture.destroy
+    redirect_to "http://localhost:3000/all_pictures"
   end
   def edit
     @picture = Picture.find_by({:id => params[:id]})
