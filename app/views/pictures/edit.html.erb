@@ -1,6 +1,6 @@
-<h1>Add An Existing Picture</h1>
+<h1>Edit An Existing Picture</h1>
 
-<%= form_tag( "http://localhost:3000/update_picture/#{@picture.id}", :method => "update") do %>
+<%= form_tag( picture_url(@picture.id), :method => "patch") do %>
   <div>
     <%= label_tag :caption, "Image Caption:" %>
     <%= text_field_tag :caption, @picture.caption %>

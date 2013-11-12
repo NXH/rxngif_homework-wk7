@@ -4,8 +4,8 @@
 <%= image_tag( @picture.source, :width => 200) %>
 <ul>
   <li> <%= @picture.caption%> </li>
-  <li> <%= link_to( "Edit", "http://localhost:3000/edit_picture_form/#{@picture.id}") %></li>
-  <li> <%= link_to( "Delete", "http://localhost:3000/delete_picture/#{@picture.id}" ) %></li>
-  <li> <%= link_to("All Pictures", "http://localhost:3000/all_pictures" ) %> </li>
+  <li> <%= link_to( "Edit", edit_picture_url(@picture.id) ) %></li>
+  <li> <%= link_to( "Delete", picture_url(@picture.id), :method => "delete" ) %></li>
+  <li> <%= link_to("All Pictures", pictures_url ) %> </li>
 </ul>
 
