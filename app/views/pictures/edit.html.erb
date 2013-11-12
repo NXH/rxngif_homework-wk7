@@ -1,15 +1,15 @@
 <h1>Add An Existing Picture</h1>
 
-<form action = "http://localhost:3000/update_picture/<%= @picture.id %>">
+<%= form_tag( "http://localhost:3000/update_picture/#{@picture.id}", :method => "update") do %>
   <div>
-    <label for="the_caption">Caption:</label>
-    <input id="the_caption" type="text" name="caption" value="<%= @picture.caption %>">
+    <%= label_tag :caption, "Image Caption:" %>
+    <%= text_field_tag :caption, @picture.caption %>
   </div>
   <div>
-    <label for="image_url">Image URL:</label>
-    <input id="image_url" type="text" name="source" value="<%= @picture.source %>">
+    <%= label_tag :source, "Image URL:" %>
+    <%= text_field_tag :source, @picture.source %>
   </div>
   <div>
     <input type="submit" value="Update Picture">
   </div>
-</form>
+<% end %>
